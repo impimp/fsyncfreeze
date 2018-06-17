@@ -23,6 +23,6 @@ int fdatasync(int fd) {
 
 	orig_fdatasync_int_type fdatasync_;
     fdatasync_ = (orig_fdatasync_int_type)dlsym(RTLD_NEXT,"fdatasync");
-    return fsync_(fd);
+    return fdatasync_(fd);
 
 }
